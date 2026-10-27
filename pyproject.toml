@@ -1,0 +1,68 @@
+[build-system]
+requires = ["setuptools>=78.1.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kt-fsv"
+version = "0.2.0"
+authors = [
+    { name="Radu Voina", email="radu.voina@keytek.eu" }
+]
+description = "Feature Selective Validation (FSV) for paired real-valued 1D responses"
+readme = { file = "README.md", content-type = "text/markdown" }
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.13.5"
+keywords = [
+    "fsv",
+    "feature-selective-validation",
+    "ieee-1597",
+    "signal-processing",
+    "validation",
+    "emc",
+    "electromagnetic-compatibility"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.13",
+    "Natural Language :: English",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Typing :: Typed",
+]
+dependencies = [
+    "numpy>=2.5.2",
+    "matplotlib>=3.10.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4.1",
+    "pytest-cov>=6.0.0",
+]
+test = [
+    "pytest>=8.4.1",
+]
+examples = [
+    "scikit-rf>=1.8.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/rvoina/kt-fsv"
+Repository = "https://github.com/rvoina/kt-fsv.git"
+Documentation = "https://github.com/rvoina/kt-fsv/tree/main/docs"
+Issues = "https://github.com/rvoina/kt-fsv/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["kt_fsv*"]
+exclude = ["tests*"]
+
+[tool.setuptools.package-data]
+kt_fsv = ["py.typed"]
